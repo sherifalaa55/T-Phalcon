@@ -33,7 +33,7 @@ use Parse\ParseClient;
  * @category	Controllers
  */
 
-class SearchController extends ControllerBase
+class WorkersController extends ControllerBase
 {
 	public function initialize()
 	{
@@ -41,15 +41,7 @@ class SearchController extends ControllerBase
 		$this->queue = $queue; 
 	}
 
-
-	public function searchTweetsAction()
-	{
-		$query = $_GET['q'];
-		$this->queue->choose('recent')->put(['fetchRecentTweets' => $query]);
-		$this->queue->put(['fetchTweets' => $query]);
-	}
-
-	public function createAction()
+	public function recentAction()
 	{
 		$mongo = new MongoClient();
 		// $mongo->selectDB("pval");
@@ -120,26 +112,11 @@ class SearchController extends ControllerBase
 		}
 	}
 
+
+
 	public function runAction()
 	{
 
-		$firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-
-		// --- storing an array ---
-		$test = array(
-		    "foo" => "bar",
-		    "i_love" => "lamp",
-		    "id" => 42
-		);
-		$dateTime = new DateTime();
-		$firebase->set(DEFAULT_PATH . '/' . $dateTime->format('c'), $test);
-
-		// --- storing a string ---
-		$firebase->set(DEFAULT_PATH . '/name/contact001', "John Doe");
-
-		// --- reading the stored string ---
-		$name = $firebase->get(DEFAULT_PATH . '/name/contact001');
-		var_dump($name);
 	}
 }
 
