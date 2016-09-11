@@ -46,6 +46,7 @@ return new \Phalcon\Config([
         'librariesDir'   => __DIR__ . '/../../app/libraries/',
         'viewsDir'       => __DIR__ . '/../../app/views/',
         'cacheDir'       => __DIR__ . '/../../app/cache/',
+        'repoDir'       => __DIR__ . '/../../app/Repositories/',
         'baseUri'        => '',
     ],
 

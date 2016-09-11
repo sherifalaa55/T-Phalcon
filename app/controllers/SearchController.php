@@ -1,37 +1,4 @@
 <?php
-use Parse\ParseObject;
-use Parse\ParseQuery;
-use Parse\ParseACL;
-use Parse\ParsePush;
-use Parse\ParseUser;
-use Parse\ParseInstallation;
-use Parse\ParseException;
-use Parse\ParseAnalytics;
-use Parse\ParseFile;
-use Parse\ParseCloud;
-use Parse\ParseClient;
-/**
- * Phalcon StarterKit
- *
- * A simple starterKit for PhalconPHP. 
- *
- * @package		StarterKit
- * @author		Jeremie Ges & Laurent Schaffner
- * @link		https://github.com/GesJeremie/PhalconPHP-StarterKit
- * @since		Version 0.1
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * HelloController
- *
- * A simple example of controller system.
- *
- * @package		PhalconPHP
- * @subpackage	Controllers
- * @category	Controllers
- */
 
 class SearchController extends ControllerBase
 {
@@ -45,8 +12,9 @@ class SearchController extends ControllerBase
 	public function searchTweetsAction()
 	{
 		$query = $_GET['q'];
-		$this->queue->choose('recent')->put(['fetchRecentTweets' => $query]);
 		$this->queue->put(['fetchTweets' => $query]);
+		$this->queue->choose('recent');
+		$this->queue->put(['fetchRecentTweets' => $query]);
 	}
 
 	public function createAction()
@@ -118,28 +86,6 @@ class SearchController extends ControllerBase
 		    $job->delete();
 		    die();
 		}
-	}
-
-	public function runAction()
-	{
-
-		$firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-
-		// --- storing an array ---
-		$test = array(
-		    "foo" => "bar",
-		    "i_love" => "lamp",
-		    "id" => 42
-		);
-		$dateTime = new DateTime();
-		$firebase->set(DEFAULT_PATH . '/' . $dateTime->format('c'), $test);
-
-		// --- storing a string ---
-		$firebase->set(DEFAULT_PATH . '/name/contact001', "John Doe");
-
-		// --- reading the stored string ---
-		$name = $firebase->get(DEFAULT_PATH . '/name/contact001');
-		var_dump($name);
 	}
 }
 

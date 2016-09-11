@@ -27,5 +27,6 @@ $router->add('/', 'hello::index');
 
 $router->add('/search' , 'Search::searchTweets');
 $router->add('/create' , 'Search::create');
-$router->add('/run' , 'Search::run');
+$router->add('/recentQueue' , 'Workers::recent');
+$router->add('/mixedQueue' , 'Workers::mixed');
 $router->add('/reports' , 'Reports::getReports');
