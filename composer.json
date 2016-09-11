@@ -1,0 +1,13 @@
+{
+    "name": "root/pv",
+    "authors": [
+        {
+            "name": "sherif",
+            "email": "sherif.alaa55@gmail.com"
+        }
+    ],
+    "require": {
+    	"parse/php-sdk" : "1.2.*",
+        "ktamas77/firebase-php": "dev-master"
+    }
+}
