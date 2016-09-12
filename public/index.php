@@ -16,7 +16,8 @@
 |
 */
 define('ENVIRONMENT', 'development');
-
+set_time_limit(0);
+// curl_setopt($curl, CURLOPT_TIMEOUT, 0);
 /*
 |--------------------------------------------------------------------------
 | ERROR REPORTING
@@ -53,7 +54,7 @@ if (defined('ENVIRONMENT'))
 |
 */
 require '../vendor/autoload.php';
-require_once('TwitterAPIExchange.php');
+// require_once('TwitterAPIExchange.php');
 require('bootstrap.php');
 
 ?>

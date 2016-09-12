@@ -5,6 +5,11 @@
 */
 class UsersRepository
 {
+	public function __construct()
+	{
+		
+	}
+	
 	public function storeUsers()
 	{
 		

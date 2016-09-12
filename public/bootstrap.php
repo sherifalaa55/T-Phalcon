@@ -150,18 +150,6 @@ $queue = new Phalcon\Queue\Beanstalk(
     )
 );
 
-Parse\ParseClient::initialize( 'aCjZLUH8mgIVZDSrPAdQJgR5ktZRGByni735uDpC', '3g5xuWuXTNa1NtbZUIPrEg84GiUUPMarMyqjQkUc', '1O6h9EfgaXuag9yxxJiqE5OFyzbYUrLs3ePQtVxi' );
-// Users of Parse Server will need to point ParseClient at their remote URL and Mount Point:
-Parse\ParseClient::setServerURL('https://parseapi.back4app.com','/1');
-
-// while (($job = $queue->peekReady()) !== false) {
-//     echo "fdsaf";
-//     $message = $job->getBody();
-
-//     var_dump($message);
-
-//     $job->delete();
-// }
 const DEFAULT_URL = 'https://pval-762a5.firebaseio.com/';
 const DEFAULT_TOKEN = 'FCNtNVoEbEgeaEVYY3BS8XgtS1n2B3BBpZcYtVZx';
 const DEFAULT_PATH = '/firebase/example';

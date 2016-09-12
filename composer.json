@@ -8,6 +8,7 @@
     ],
     "require": {
     	"parse/php-sdk" : "1.2.*",
-        "ktamas77/firebase-php": "dev-master"
+        "ktamas77/firebase-php": "dev-master",
+        "j7mbo/twitter-api-php": "dev-master"
     }
 }
