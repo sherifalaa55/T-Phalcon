@@ -11,7 +11,6 @@ $usersCollection = $mongo->pval->users;
 while (($job = $queue->peekReady()) !== false) {
 
     $message = $job->getBody();
-    // die(var_dump($message));
     $settings = array(
     	'oauth_access_token' => "427628232-v9GN4suDydtodmVITs4KQhwLr8wViE8cjeByG9GB",
     	'oauth_access_token_secret' => "6fFGxWKgtPS4GT1DXkoWmik9WohSjesxQOnT3DEwTZZC2",

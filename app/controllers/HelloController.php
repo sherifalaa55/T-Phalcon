@@ -1,26 +1,4 @@
 <?php
-/**
- * Phalcon StarterKit
- *
- * A simple starterKit for PhalconPHP. 
- *
- * @package		StarterKit
- * @author		Jeremie Ges & Laurent Schaffner
- * @link		https://github.com/GesJeremie/PhalconPHP-StarterKit
- * @since		Version 0.1
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * HelloController
- *
- * A simple example of controller system.
- *
- * @package		PhalconPHP
- * @subpackage	Controllers
- * @category	Controllers
- */
 
 class HelloController extends ControllerBase
 {

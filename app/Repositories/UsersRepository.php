@@ -1,7 +1,7 @@
 <?php
 
 /**
-* 
+* resository for storing users in mongodb
 */
 class UsersRepository
 {

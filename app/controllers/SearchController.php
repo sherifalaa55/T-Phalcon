@@ -15,6 +15,7 @@ class SearchController extends ControllerBase
 		$this->queue->put(['fetchTweets' => $query]);
 		$this->queue->choose('recent');
 		$this->queue->put(['fetchRecentTweets' => $query]);
+		return "Initializing workers";
 	}
 
 

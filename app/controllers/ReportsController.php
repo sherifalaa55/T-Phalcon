@@ -10,28 +10,6 @@ use Parse\ParseAnalytics;
 use Parse\ParseFile;
 use Parse\ParseCloud;
 use Parse\ParseClient;
-/**
- * Phalcon StarterKit
- *
- * A simple starterKit for PhalconPHP. 
- *
- * @package		StarterKit
- * @author		Jeremie Ges & Laurent Schaffner
- * @link		https://github.com/GesJeremie/PhalconPHP-StarterKit
- * @since		Version 0.1
- */
-
-// ------------------------------------------------------------------------
-
-/**
- * HelloController
- *
- * A simple example of controller system.
- *
- * @package		PhalconPHP
- * @subpackage	Controllers
- * @category	Controllers
- */
 
 class ReportsController extends ControllerBase
 {
@@ -49,7 +27,7 @@ class ReportsController extends ControllerBase
 		$users = iterator_to_array($users);
 		$users_ids = array_column($users, 'id');
 		$tweets = $tweetsCollection->find(["user.id" => ['$in' => $users_ids ] ])->sort(["retweet_count" => -1])->limit(20);
-		var_dump(iterator_to_array($tweets));
+		print_r(iterator_to_array($tweets));
 	}
 }
 
